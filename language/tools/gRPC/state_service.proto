@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package state;
+
+service StateService {
+  rpc StreamState (stream GetStateRequest) returns (stream State);
+}
+
+message GetStateRequest {
+  // You can add any request parameters here if needed.
+}
+
+message State {
+  string value = 1;
+}
